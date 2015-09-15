@@ -1,0 +1,5 @@
+consul-rpm:
+  build: consul
+  volumes:
+    - ./pkg:/out:rw
+  privileged: true
