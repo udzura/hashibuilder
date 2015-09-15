@@ -3,3 +3,9 @@ consul-rpm:
   volumes:
     - ./pkg:/out:rw
   privileged: true
+
+vault-rpm:
+  build: vault
+  volumes:
+    - ./pkg:/out:rw
+  privileged: true
