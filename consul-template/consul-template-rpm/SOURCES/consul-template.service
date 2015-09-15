@@ -1,0 +1,13 @@
+[Unit]
+Description=Generic template rendering and notifications with Consul
+Documentation=https://github.com/hashicorp/consul-template#readme
+After=network-online.target consul.service
+Wants=network-online.target consul.service
+
+[Service]
+ExecStart=/usr/bin/consul-template -config /etc/consul-template/consul-template.hcl
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
