@@ -26,11 +26,11 @@ This project provides a convenient way to populate values from Consul into the f
 The daemon consul-template queries a Consul instance and updates any number of specified templates on the filesystem. As an added bonus, consul-template can optionally run arbitrary commands when the update process completes. See the Examples section for some scenarios where this functionality might prove useful.
 
 %prep
-%setup -q -c -b 4
+%setup -q -c
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-cp consul-template %{buildroot}/%{_bindir}
+cp %{name}_%{version}_linux_amd64/consul-template %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}
 cp %{SOURCE2} %{buildroot}/%{_sysconfdir}/%{name}/
 
@@ -58,7 +58,7 @@ rm -rf %{buildroot}
 %if 0%{?fedora} >= 14 || 0%{?rhel} >= 7
 %{_unitdir}/%{name}.service
 %endif
-%attr(755, root, root) %{_bindir}/consul
+%attr(755, root, root) %{_bindir}/consul-template
 
 
 

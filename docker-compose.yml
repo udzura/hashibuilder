@@ -4,6 +4,12 @@ consul-rpm:
     - ./pkg:/out:rw
   privileged: true
 
+consul-template-rpm:
+  build: consul-template
+  volumes:
+    - ./pkg:/out:rw
+  privileged: true
+
 vault-rpm:
   build: vault
   volumes:
