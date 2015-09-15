@@ -26,5 +26,6 @@ $ docker-compose run consul-rpm
 
 * consul-rpm
 * vault-rpm
+* consul-template-rpm
 
 Best match for `systemd` installed system. *TODO: add sysvinit script...*
